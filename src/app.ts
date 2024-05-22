@@ -1,17 +1,18 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
-
-const app = express();
-const port = 3000;
+import { ProductRoutes } from './modules/product/product.route';
 const app: Application = express();
-//parser
+// const port = 3000;
+
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
-});
+// application router
+app.use('/api/products', ProductRoutes);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+const getAController = (req: Request, res: Response) => {
+  res.send('Hello World!');
+};
+app.get('/', getAController);
+
+export default app;
