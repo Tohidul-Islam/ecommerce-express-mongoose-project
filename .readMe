@@ -1,0 +1,9 @@
+You just need to clone the project from github and then run the server. Then:
+create a database username and password and copy the url of mongodb.
+create .env file on root and paste the url with the original userName and password. also, need some other info as well.
+PORT = 5000
+DATABASE_URL = database url with username and password
+NODE_ENV = development
+
+npm run build
+npm run start:dev
