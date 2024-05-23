@@ -1,20 +1,26 @@
 import { TProduct } from './product.interface';
 import ProductModel from './product.model';
 
+// create product
 const createProductIntoDB = async (product: TProduct) => {
   const result = await ProductModel.create(product);
   return result;
 };
+
+// get all products
 
 const getAllProductsFromDB = async () => {
   const result = await ProductModel.find();
   return result;
 };
 
+// get single product
 const getSingleProductFromDB = async (id: string) => {
   const result = await ProductModel.findOne({ id });
   return result;
 };
+
+// update product
 
 const updateProductInDB = async (id: string, updateData: Partial<TProduct>) => {
   const result = await ProductModel.findOneAndUpdate(
@@ -28,6 +34,7 @@ const updateProductInDB = async (id: string, updateData: Partial<TProduct>) => {
   return result;
 };
 
+// delete Products
 const deleteProductFromDB = async (id: string) => {
   try {
     const result = await ProductModel.findOneAndDelete({ id });
@@ -42,7 +49,7 @@ const deleteProductFromDB = async (id: string) => {
   }
 };
 
-// seaching product
+// searching product
 const searchProductsByNameFromDB = async (
   name: string
 ): Promise<TProduct[]> => {
