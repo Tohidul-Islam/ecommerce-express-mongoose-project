@@ -13,7 +13,7 @@ app.use('/api/products', ProductRoutes);
 app.use('/api/orders', OrderRoutes);
 
 const getAController = (req: Request, res: Response) => {
-  res.send('Hello World!');
+  res.send('Hello eCommerce Project!');
 };
 app.get('/', getAController);
 

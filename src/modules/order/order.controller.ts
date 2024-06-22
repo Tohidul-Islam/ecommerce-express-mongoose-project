@@ -5,7 +5,7 @@ import { orderSchema } from './order.validation';
 // created new order
 const createOrder = async (req: Request, res: Response) => {
   try {
-    const orderData = orderSchema.parse(req.body.order);
+    const orderData = orderSchema.parse(req.body);
     const result = await OrderServices.createOrderInDB(orderData);
     res.status(200).json({
       success: true,

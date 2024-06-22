@@ -6,7 +6,9 @@ async function main() {
   try {
     await mongoose.connect(config.database_url as string);
     app.listen(config.port, () => {
-      console.log(`New Example app listening on port ${config.port}`);
+      console.log(
+        `eCommerce express mongoose project is running on port ${config.port}`
+      );
     });
   } catch (error) {
     console.log(error);
